@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner With Us - AgriLink</title>
+    <meta name="description" content="Join AgriLink in revolutionizing Ghana's agricultural sector through strategic partnerships.">
+    <meta name="keywords" content="AgriLink partnership, invest in agriculture, collaboration">
+    <meta property="og:title" content="Partner With Us - AgriLink">
+    <meta property="og:description" content="Strategic partnerships for agricultural transformation">
+    <meta name="twitter:title" content="Partner With Us - AgriLink">
+    <meta name="twitter:description" content="Strategic partnerships for agricultural transformation">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet"><link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
+
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #10b981;
+            --secondary-color: #34d399;
+            --accent-color: #059669;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply px-6 py-3 bg-[var(--primary-color)] text-white rounded-lg font-medium hover:bg-[var(--accent-color)] transition-colors duration-200;
+        }
+        
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center mb-4;
+        }
+        
+        .section-subtitle {
+            @apply text-lg text-[var(--text-light)] text-center max-w-3xl mx-auto mb-12;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="components/PartnershipOptions.js"></script>
+    <script type="text/babel" src="components/ContactForm.js"></script>
+    <script type="text/babel" src="partner-app.js"></script>
+</body>
+</html>

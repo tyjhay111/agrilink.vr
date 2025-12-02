@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgriLink - Smart Digital Bridge for Ghana's Farmers</title>
+
+    <meta name="description" content="AgriLink revolutionizes agricultural commerce by connecting farmers directly to markets through AI-powered intelligence and accessible technology." />
+    <meta name="keywords" content="agriculture, Ghana, farmers, AI, market access, AgriLink" />
+   
+    <meta property="og:title" content="AgriLink - Smart Digital Bridge for Ghana's Farmers" />
+    <meta property="og:description" content="Revolutionizing agricultural commerce through AI-powered market intelligence" />
+    <meta name="twitter:title" content="AgriLink - Smart Digital Bridge for Ghana's Farmers" />
+    <meta name="twitter:description" content="Revolutionizing agricultural commerce through AI-powered market intelligence" />
+    
+    <!-- CDN Links -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/lucide-static/font/lucide.css" rel="stylesheet"/>
+    <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
+
+    <!-- Custom Tailwind Config -->
+    <style type="text/tailwindcss">
+        @layer theme {
+            :root {
+                --primary-color: #10b981;
+                --secondary-color: #34d399;
+                --accent-color: #059669;
+                --text-dark: #1f2937;
+                --text-light: #6b7280;
+                --bg-light: #f9fafb;
+            }
+        }
+
+        @layer base {
+            body {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Roboto, 'Helvetica Neue', Arial, sans-serif;
+                color: var(--text-dark);
+                background: white;
+            }
+        }
+
+        @layer components {
+            .btn-primary {
+                @apply px-6 py-3 bg-[var(--primary-color)] text-white rounded-lg font-medium 
+                       hover:bg-[var(--accent-color)] transition duration-300 transform hover:scale-105 hover:shadow-lg;
+            }
+            .btn-secondary {
+                @apply px-6 py-3 bg-white text-[var(--primary-color)] border-2 border-[var(--primary-color)] 
+                       rounded-lg font-medium hover:bg-[var(--bg-light)] transition duration-300 transform hover:scale-105 hover:shadow-lg;
+            }
+            .section-title {
+                @apply text-3xl md:text-4xl font-bold text-center mb-4;
+            }
+            .section-subtitle {
+                @apply text-lg text-[var(--text-light)] text-center max-w-3xl mx-auto mb-12;
+            }
+            .card {
+                @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+            }
+            .feature-icon {
+                @apply w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4;
+            }
+        }
+
+        @layer utilities {
+            /* Animations */
+            @keyframes float {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-10px); }
+            }
+            .animate-float { animation: float 10s ease-in-out infinite; }
+
+            @keyframes slide-up {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-slide-up { animation: slide-up 0.6s ease-out forwards; opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <!-- Loading fallback -->
+        <div class="min-h-screen flex items-center justify-center bg-gray-50">
+            <div class="text-center">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
+                <p class="text-gray-600">Loading AgriLink...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- React Components -->
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/ProblemSection.js"></script>
+    <script type="text/babel" src="components/SolutionSection.js"></script>
+    <script type="text/babel" src="components/AnimatedNumber.js"></script>
+    <script type="text/babel" src="components/DoughnutChart.js"></script>
+    <script type="text/babel" src="components/TransformSection.js"></script>
+
+    <!-- App Mount -->
+    <script type="text/babel" src="app.js"></script>
+    <head>
+        
+    <!-- Add this to suppress the error temporarily -->
+    <script>
+        // Suppress 404 errors for missing main.js
+        window.addEventListener('error', function(e) {
+            if (e.target.src && e.target.src.includes('main.js')) {
+                e.preventDefault();
+                console.log('main.js not found - this is expected in current setup');
+            }
+        });
+    </script>
+    </head>
+</body>
+</html>

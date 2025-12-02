@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AgriLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
+
+    <style>
+        /* Custom styles for hamburger animation */
+        .hamburger .bar {
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        /* Custom styles for blog */
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo with image -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img
+                    src="images/agrlink.jpg"
+                    alt="AgriLink Logo"
+                    loading="lazy"
+                    class="w-12 h-12 rounded-full object-cover"
+                />
+                <span class="text-2xl font-bold text-black-600">AgriLink</span>
+            </a>
+           
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="index.html" class="hover:text-green-600 transition-colors duration-200">Home</a></li>
+                <li><a href="about.html" class="hover:text-green-600 transition-colors duration-200">About Us</a></li>
+                <li><a href="features.html" class="hover:text-green-600 transition-colors duration-200">Features</a></li>
+                <li><a href="impact.html" class="hover:text-green-600 transition-colors duration-200">Our Impact</a></li>
+                <li><a href="blog.html" class="font-bold text-green-600 border-b-2 border-green-600 pb-1">Blog</a></li>
+                <li><a href="contact.html" class="hover:text-green-600 transition-colors duration-200">Contact</a></li>
+                <li><a href="partner.html" class="ml-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold">Partner With Us</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <div class="md:hidden hamburger cursor-pointer">
+                <span class="bar block w-6 h-0.5 bg-gray-800"></span>
+                <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
+                <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul class="nav-menu md:hidden absolute top-full left-0 bg-white w-full shadow-md flex-col items-center hidden">
+                <li class="w-full text-center py-3 border-b"><a href="index.html" class="hover:text-green-600 block transition-colors duration-200">Home</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="about.html" class="hover:text-green-600 block transition-colors duration-200">About Us</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="features.html" class="hover:text-green-600 block transition-colors duration-200">Features</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="impact.html" class="hover:text-green-600 block transition-colors duration-200">Our Impact</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="blog.html" class="font-bold text-green-600 block">Blog</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="contact.html" class="hover:text-green-600 block transition-colors duration-200">Contact</a></li>
+                <li class="w-full text-center py-3"><a href="partner.html" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-semibold inline-block mx-2">Partner With Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">AgriLink News & Insights</h1>
+                <p class="text-xl max-w-2xl mx-auto">Stay updated with the latest trends, success stories, and innovations in agriculture technology</p>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="py-8 bg-white shadow-sm">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="relative w-full md:w-1/3">
+                        <input type="text" placeholder="Search blog posts..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                        <i class="fas fa-search absolute right-3 top-3.5 text-gray-400"></i>
+                    </div>
+                    <div class="flex space-x-4">
+                        <select class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>All Categories</option>
+                            <option>Technology</option>
+                            <option>Success Stories</option>
+                            <option>Market Insights</option>
+                            <option>Farmer Tips</option>
+                        </select>
+                        <select class="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            <option>Sort by Date</option>
+                            <option>Sort by Popularity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Listing Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Farmers in Volta Region" 
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Success Stories</span>
+                                <span class="mx-2">•</span>
+                                <span>October 26, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Empowering Volta Region Farmers</h3>
+                            <p class="text-gray-600 mb-4">Discover how our pilot program is boosting incomes and reducing post-harvest losses for local farmers through innovative technology solutions.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                <span>5 min read</span>
+                            </div>
+                        </div>
+                        <a href="blog-post-1.html" class="block bg-green-600 hover:bg-green-700 text-white font-bold text-center py-3 transition duration-300 mt-auto">Read More</a>
+                    </div>
+                    
+                    <!-- Blog Post 2 -->
+                    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="AI Technology in Agriculture" 
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">Technology</span>
+                                <span class="mx-2">•</span>
+                                <span>October 22, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">The Power of AI in Price Prediction</h3>
+                            <p class="text-gray-600 mb-4">A deep dive into how our AI gives farmers a critical advantage in a fluctuating market with accurate price forecasts and market insights.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                <span>7 min read</span>
+                            </div>
+                        </div>
+                        <a href="blog-post-2.html" class="block bg-green-600 hover:bg-green-700 text-white font-bold text-center py-3 transition duration-300 mt-auto">Read More</a>
+                    </div>
+                    
+                    <!-- Blog Post 3 -->
+                    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="WhatsApp on smartphone" 
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">Innovation</span>
+                                <span class="mx-2">•</span>
+                                <span>October 18, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Why WhatsApp is a Game-Changer</h3>
+                            <p class="text-gray-600 mb-4">Learn our strategy to meet farmers where they are, using accessible technology to bridge the digital divide and deliver vital information.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                <span>4 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block bg-green-600 hover:bg-green-700 text-white font-bold text-center py-3 transition duration-300 mt-auto">Read More</a>
+                    </div>
+                    
+                    <!-- Additional Blog Post 4 -->
+                    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Farmers harvesting" 
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium">Farmer Tips</span>
+                                <span class="mx-2">•</span>
+                                <span>October 15, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">5 Ways to Increase Crop Yield</h3>
+                            <p class="text-gray-600 mb-4">Practical tips and techniques that farmers can implement to significantly increase their crop yields using sustainable practices.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                <span>6 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block bg-green-600 hover:bg-green-700 text-white font-bold text-center py-3 transition duration-300 mt-auto">Read More</a>
+                    </div>
+                    
+                    <!-- Additional Blog Post 5 -->
+                    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Market analysis" 
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-medium">Market Insights</span>
+                                <span class="mx-2">•</span>
+                                <span>October 12, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Understanding Seasonal Price Fluctuations</h3>
+                            <p class="text-gray-600 mb-4">An analysis of how seasonal changes affect agricultural commodity prices and strategies farmers can use to maximize profits.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                <span>8 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block bg-green-600 hover:bg-green-700 text-white font-bold text-center py-3 transition duration-300 mt-auto">Read More</a>
+                    </div>
+                    
+                    <!-- Additional Blog Post 6 -->
+                    <div class="blog-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Sustainable farming" 
+                                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <div class="flex items-center text-sm text-gray-500 mb-2">
+                                <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full text-xs font-medium">Sustainability</span>
+                                <span class="mx-2">•</span>
+                                <span>October 8, 2024</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Sustainable Farming Practices for the Future</h3>
+                            <p class="text-gray-600 mb-4">Exploring innovative sustainable farming methods that protect the environment while maintaining productivity and profitability.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                <span>10 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="block bg-green-600 hover:bg-green-700 text-white font-bold text-center py-3 transition duration-300 mt-auto">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="mt-12 flex justify-center">
+                    <nav class="flex items-center space-x-2">
+                        <a href="#" class="px-3 py-2 rounded-lg bg-green-600 text-white font-medium">1</a>
+                        <a href="#" class="px-3 py-2 rounded-lg bg-white border border-gray-300 hover:bg-gray-50 font-medium">2</a>
+                        <a href="#" class="px-3 py-2 rounded-lg bg-white border border-gray-300 hover:bg-gray-50 font-medium">3</a>
+                        <a href="#" class="px-3 py-2 rounded-lg bg-white border border-gray-300 hover:bg-gray-50 font-medium">Next</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 bg-green-50">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Stay Updated with AgriLink</h2>
+                <p class="text-lg text-gray-600 mb-8">Subscribe to our newsletter to receive the latest updates, insights, and success stories directly in your inbox.</p>
+                <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <button type="submit" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-200">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img
+                            src="images/agrlink200.png"
+                            alt="AgriLink Logo"
+                            loading="lazy"
+                            class="w-10 h-10 rounded-full object-cover"
+                        />
+                        <span class="text-xl font-bold">AgriLink</span>
+                    </div>
+                    <p class="text-gray-400">Digitizing Agriculture, Together.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="features.html" class="text-gray-400 hover:text-white transition-colors duration-200">Features</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors duration-200">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-green-500"></i>
+                            <span>123 Agriculture Street, Accra, Ghana</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-green-500"></i>
+                            <span>+233 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-green-500"></i>
+                            <span>info@agrilink.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AgriLink. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

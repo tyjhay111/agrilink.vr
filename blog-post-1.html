@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empowering Volta Region Farmers - AgriLink Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
+
+    <style>
+        /* Custom styles for hamburger animation */
+        .hamburger .bar {
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            < <a href="index.html" className="flex items-center space-x-2">
+                    
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-green-600">About Us</a></li>
+                <li><a href="features.html" class="hover:text-green-600">Features</a></li>
+                <li><a href="impact.html" class="hover:text-green-600">Our Impact</a></li>
+                <li><a href="blog.html" class="font-bold text-green-600">Blog</a></li>
+                <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <div class="md:hidden hamburger cursor-pointer">
+                <span class="bar block w-6 h-0.5 bg-gray-800"></span>
+                <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
+                <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul class="nav-menu md:hidden absolute top-full left-0 bg-white w-full shadow-md flex-col items-center hidden">
+                <li class="w-full text-center py-3 border-b"><a href="index.html" class="hover:text-green-600">Home</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="about.html" class="hover:text-green-600">About Us</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="features.html" class="hover:text-green-600">Features</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="impact.html" class="hover:text-green-600">Our Impact</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="blog.html" class="font-bold text-green-600">Blog</a></li>
+                <li class="w-full text-center py-3"><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <article class="bg-white p-8 rounded-lg shadow-lg">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-2">Empowering Volta Region Farmers Through Digital Access</h1>
+                    <p class="text-sm text-gray-500 mb-8">Published on October 26, 2024</p>
+                    
+                    <div class="prose lg:prose-xl max-w-none">
+                        <p>The agricultural landscape in Ghana's Volta Region is on the cusp of a major transformation, thanks to the introduction of AgriLink. For generations, farmers have contended with outdated information and exploitative middlemen, resulting in diminished profits and significant uncertainty. Our recent pilot program set out to change this narrative by putting the power of data directly into the hands of those who need it most.</p>
+                        <p>By delivering real-time market prices for commodities like maize and cassava via simple SMS and WhatsApp messages, we saw an immediate impact. Farmers were no longer guessing the value of their hard work. They could negotiate with buyers from a position of strength, armed with the same information as traders in Accra.</p>
+                        <p>One of the early adopters, a maize farmer named Adjoa, reported a 30% increase in her income from a single harvest. "Before AgriLink, I would take the first price offered to me," she explained. "Now, I check the prices on my phone. I know what my maize is worth, and I can wait for a fair offer. It has changed everything for my family."</p>
+                        <p>This is just the beginning. As we expand our network of verified buyers and logistics partners, we are not just providing data; we are building a more efficient, transparent, and profitable value chain for all.</p>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <a href="blog.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">← Back to Blog</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-8">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 AgriLink. All Rights Reserved.</p>
+            <p class="mt-2 text-gray-400">Digitizing Agriculture, Together.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

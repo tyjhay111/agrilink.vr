@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AgriLink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
+
+    <style>
+        /* Custom styles for hamburger animation */
+        .hamburger .bar {
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-green-600">AgriLink</a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center space-x-6">
+                <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-green-600">About Us</a></li>
+                <li><a href="features.html" class="hover:text-green-600">Features</a></li>
+                <li><a href="impact.html" class="hover:text-green-600">Our Impact</a></li>
+                <li><a href="blog.html" class="hover:text-green-600">Blog</a></li>
+                <li><a href="contact.html" class="font-bold text-green-600">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <div class="md:hidden hamburger cursor-pointer">
+                <span class="bar block w-6 h-0.5 bg-gray-800"></span>
+                <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
+                <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul class="nav-menu md:hidden absolute top-full left-0 bg-white w-full shadow-md flex-col items-center hidden">
+                <li class="w-full text-center py-3 border-b"><a href="index.html" class="hover:text-green-600">Home</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="about.html" class="hover:text-green-600">About Us</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="features.html" class="hover:text-green-600">Features</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="impact.html" class="hover:text-green-600">Our Impact</a></li>
+                <li class="w-full text-center py-3 border-b"><a href="blog.html" class="hover:text-green-600">Blog</a></li>
+                <li class="w-full text-center py-3"><a href="contact.html" class="font-bold text-green-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-gray-800 mb-6">Partner With Us</h1>
+                    <p class="text-lg max-w-3xl mx-auto text-gray-600 mb-12">The technology exists. The market demand is proven. The social impact is undeniable. Now we need partners who share our vision. Join us in revolutionizing Ghana's agricultural sector.</p>
+                </div>
+                
+                <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                    <form action="#" method="POST">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                                <input type="text" id="subject" name="subject" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-8">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2024 AgriLink. All Rights Reserved.</p>
+            <p class="mt-2 text-gray-400">Digitizing Agriculture, Together.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
