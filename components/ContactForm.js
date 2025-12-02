@@ -141,9 +141,9 @@ function ContactForm() {
                     contact <span className="text-red-500">*</span>
                   </label>
                   <input 
-                    type="email" 
-                    name="email"
-                    value={formData.email}
+                    type="number" 
+                    name="contact"
+                    value={formData.ContactForm}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all"
                     required
