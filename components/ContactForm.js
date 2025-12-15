@@ -476,7 +476,7 @@ function ContactForm() {
           {/* Formspree Integration Note */}
           <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
             <p className="text-sm text-gray-700 mb-2">
-              <strong>Powered by libphonenumber-js & AgriLink</strong>
+              <strong>Powered by AgriLink</strong>
             </p>
             <div className="text-xs text-gray-600 space-y-1">
               <p>✓ Phone numbers are validated and formatted to international standard (E.164)</p>
