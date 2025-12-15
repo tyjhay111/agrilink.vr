@@ -68,7 +68,7 @@ const Header = () => {
                             src="images/agrlink.jpg"
                             alt="AgriLink Logo"
                             loading="lazy"
-                            className="w-20 h-20 rounded-full object-cover"
+                            className="w-10 h-10 rounded-full object-cover"
                         />
                         <span className="text-2xl font-bold text-[var(--text-dark)]">AgriLink</span>
                     </a>
