@@ -221,7 +221,7 @@ function Footer() {
                   src="images/agrlink200.png"
                   loading="lazy"
                   alt="AgriLink Logo"
-                  className="w-20 h-20 rounded-full object-cover"
+                  className="w-10 h-10 rounded-full object-cover"
                 />
                 <span className="text-2xl font-bold">AgriLink</span>
               </div>
