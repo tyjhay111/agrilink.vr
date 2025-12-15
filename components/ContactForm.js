@@ -277,7 +277,6 @@ function ContactForm() {
             We accept phone numbers from any country in any format.
           </p>
           <p className="text-sm text-gray-500 mt-2">
-            Advanced validation ensures your phone number is correctly formatted.
           </p>
         </div>
         
@@ -479,7 +478,6 @@ function ContactForm() {
               <strong>Powered by AgriLink</strong>
             </p>
             <div className="text-xs text-gray-600 space-y-1">
-              <p>✓ Phone numbers are validated and formatted to international standard (E.164)</p>
               <p>✓ Your form submission is secured and encrypted</p>
               <p>✓ All data is sent directly to our team</p>
             </div>
