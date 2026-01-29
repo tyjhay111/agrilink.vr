@@ -13,7 +13,7 @@ const Hero = () => {
                     {/* Text Content */}
                     <div className="text-center lg:text-left">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[var(--text-dark)] leading-tight mb-6 animate-slide-in-left">
-                            Connecting Ghanaian <span className="text-[var(--primary-color)]">Farmers To Markets🇬🇭 </span>
+                            Connecting Ghanaian <span className="text-[var(--primary-color)]">Farmers To Market🇬🇭 </span>
                         </h1>
                         <p className="text-lg md:text-xl text-[var(--text-light)] max-w-xl mx-auto lg:mx-0 mb-8 animate-slide-in-left animation-delay-300">
                             AgriLink revolutionizes agricultural commerce by connecting farmers directly to markets through AI-powered intelligence and accessible technology.
