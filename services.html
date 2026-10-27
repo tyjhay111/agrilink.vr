@@ -3,22 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - AgriLink</title>
+  <meta name="description" content="Discover agricultural services from AgriLink, connecting farmers with practical support and resources.">
+  <meta name="theme-color" content="#059669">
+  <title>Services | AgriLink</title>
   <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
-  <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-  <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
-  <style type="text/tailwindcss">
+  <script crossorigin src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #059669;
+      --text-dark: #1f2937;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text-dark);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #059669;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #047857;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid #059669;
+      background: white;
+      color: #047857;
+    }
+
+    .btn-secondary:hover {
+      background: #059669;
+      color: white;
+    }
+
+    :focus-visible {
+      outline: 3px solid #34d399;
+      outline-offset: 3px;
+    }
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <main class="flex min-h-screen items-center justify-center" role="status" aria-live="polite">
+      <p class="text-gray-600">Loading AgriLink services...</p>
+    </main>
+  </div>
 
-  <script type="text/babel" src="components/Header.js"></script>
-  <script type="text/babel" src="components/Footer.js"></script>
-  <script type="text/babel" src="components/ServicesList.js"></script> <!-- new -->
-  <script type="text/babel" src="services-app.js"></script> <!-- new entry -->
+  <script type="text/babel" data-presets="env,react" src="components/Header.js"></script>
+  <script type="text/babel" data-presets="env,react" src="components/Footer.js"></script>
+  <script type="text/babel" data-presets="env,react" src="components/ServiceList.js"></script>
+  <script type="text/babel" data-presets="env,react" src="services.js"></script>
 </body>
 </html>
