@@ -105,3 +105,5 @@ const Header = () => {
     </header>
   );
 };
+
+window.Header = Header;
