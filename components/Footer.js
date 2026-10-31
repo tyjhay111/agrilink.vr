@@ -355,3 +355,5 @@ function Footer() {
     return null;
   }
 }
+
+window.Footer = Footer;
