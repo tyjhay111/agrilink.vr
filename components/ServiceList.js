@@ -486,3 +486,6 @@ const ServicesList = () => {
 
 // Expose the component for the services page entry point.
 window.ServicesList = ServicesList;
+
+// Expose the component for the services page entry point.
+window.ServicesList = ServicesList;
