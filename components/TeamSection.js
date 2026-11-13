@@ -1,3 +1,8 @@
+/**
+ * TeamSection Component - Apple-inspired design (fine-tuned)
+ * Clean typography, generous whitespace, subtle animations
+ */
+
 function TeamSection() {
   const leadership = {
     name: "Mawunyo Abali",
@@ -11,25 +16,25 @@ function TeamSection() {
 
   const team = [
     {
-      name: "Software Engineering Lead",
-      role: "Product & Engineering",
-      initials: "SE",
+      name: "Deborah Adebisi Agbabiaka",
+      role: "Co-Founder & Deputy MD, Head of Development",
+      initials: "D.A.A",
       image: "images/team/software-engineering-lead.jpg",
-      biography: "Owns the technical direction of the AgriLink platform. Converts product requirements into maintainable system architecture, prioritizes engineering work, reviews implementations, and coordinates secure delivery across web, mobile, messaging, and backend services.",
-      skills: ["System Architecture", "React", "JavaScript", "API Design", "Technical Leadership"]
+      biography: "Deborah Adebisi Agbabiaka is a Ghanaian educator, researcher, and entrepreneur driven by practical innovation. Whether mentoring students through academic research or developing impactful visual branding, Deborah focuses on building accessible, real-world solutions that empower learners and organizations across Ghana.",
+      skills: ["Research & Development", "Brand Strategy", "Education", "Design Thinking", "Team Leadership"]
     },
     {
-      name: "Backend Software Engineer",
-      role: "Platforms & Data Systems",
-      initials: "BE",
+      name: "Agroh Felin Jnr",
+      role: "Co-Founder & Deputy CTO, Backend Engineer",
+      initials: "A.F.J",
       image: "images/team/backend-software-engineer.jpg",
       biography: "Builds reliable services that connect farmers, buyers, logistics providers, market data, and payments. Designs validated REST APIs, database models, authentication flows, background jobs, and integrations designed for low-connectivity environments.",
       skills: ["Node.js", "PostgreSQL", "REST APIs", "Authentication", "Cloud Services"]
     },
     {
-      name: "Frontend Software Engineer",
-      role: "Digital Experience",
-      initials: "FE",
+      name: "Johnson Attipoe",
+      role: "Co-Founder & CTO, Software Engineer",
+      initials: "J.A",
       image: "images/team/frontend-software-engineer.jpg",
       biography: "Develops accessible, responsive interfaces for farmers, traders, and AgriLink administrators. Implements reusable React components, clear interaction states, multilingual layouts, and progressive experiences that remain practical on modest devices and variable network connections.",
       skills: ["React", "Tailwind CSS", "Accessibility", "Responsive UI", "Performance"]
@@ -45,21 +50,26 @@ function TeamSection() {
   ];
 
   return (
-    <section id="team" className="bg-white py-20" data-name="team-section" data-file="components/TeamSection.js">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="mb-4 inline-flex rounded-full bg-green-100 px-4 py-2 text-sm font-semibold text-green-800">
+    <section id="team" className="py-24 md:py-32 bg-gray-50" data-name="team-section" data-file="components/TeamSection.js">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Section header */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <span className="text-brand text-sm font-semibold uppercase tracking-widest mb-4 block">
             Leadership & Engineering
           </span>
-          <h2 className="section-title">The People Building AgriLink</h2>
-          <p className="section-subtitle mb-0">
-            Our leadership and engineering team turn agricultural research and farmer feedback into dependable software, practical operations, and measurable community impact.
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900 mb-6 text-balance">
+            The people building AgriLink.
+          </h2>
+          <p className="text-xl text-gray-500 leading-relaxed text-balance">
+            Our team turns agricultural research and farmer feedback into dependable software, practical operations, and measurable community impact.
           </p>
         </div>
 
-        <article className="mb-12 overflow-hidden rounded-3xl border border-green-100 bg-gradient-to-br from-green-50 via-white to-emerald-50 shadow-sm">
-          <div className="grid items-center gap-8 p-8 md:grid-cols-[220px_1fr] md:p-10">
-            <div className="relative mx-auto flex h-44 w-44 items-center justify-center overflow-hidden rounded-full border-8 border-white bg-green-600 text-3xl font-bold text-white shadow-lg" aria-label={`${leadership.name} profile image`}>
+        {/* Leadership card - prominent */}
+        <article className="mb-20 overflow-hidden rounded-3xl bg-white border border-gray-100 shadow-sm">
+          <div className="grid items-center gap-8 p-8 md:grid-cols-[240px_1fr] md:p-12">
+            {/* Avatar */}
+            <div className="relative mx-auto flex h-48 w-48 items-center justify-center overflow-hidden rounded-full bg-gray-900 text-3xl font-semibold text-white shadow-xl ring-4 ring-white">
               <span aria-hidden="true">{leadership.initials}</span>
               <img
                 src={leadership.image}
@@ -70,30 +80,55 @@ function TeamSection() {
             </div>
 
             <div>
-              <span className="text-sm font-bold uppercase tracking-widest text-green-700">Chief Executive</span>
-              <h3 className="mt-2 text-3xl font-bold text-gray-900">{leadership.name}</h3>
-              <p className="mt-1 text-lg font-semibold text-green-700">{leadership.role}</p>
-              <p className="mt-5 max-w-3xl leading-8 text-gray-600">{leadership.biography}</p>
-              <p className="mt-5 text-sm font-semibold text-gray-800">{leadership.focus}</p>
-              <a href={leadership.link} className="btn-primary mt-6 inline-flex" aria-label="Contact AgriLink leadership">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand mb-3 block">
+                Chief Technology Officer  
+              </span>
+              <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-2">
+                {leadership.name}
+              </h3>
+              <p className="text-lg font-medium text-gray-500 mb-6">
+                {leadership.role}
+              </p>
+              <p className="text-base leading-relaxed text-gray-600 mb-6 max-w-3xl">
+                {leadership.biography}
+              </p>
+              <p className="text-sm font-semibold text-gray-700 mb-8">
+                {leadership.focus}
+              </p>
+              <a 
+                href={leadership.link} 
+                className="inline-flex items-center gap-2 text-brand font-medium hover:gap-3 transition-all duration-300"
+                aria-label="Contact AgriLink leadership"
+              >
                 Contact Leadership
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
             </div>
           </div>
         </article>
 
-        <div className="mb-8 flex items-end justify-between gap-5 border-b border-gray-200 pb-5">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-green-700">Technology Team</p>
-            <h3 className="mt-2 text-2xl font-bold text-gray-900">Engineering behind the platform</h3>
-          </div>
+        {/* Team divider */}
+        <div className="mb-12 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-brand mb-3">
+            Technology & Operations Team
+          </p>
+          <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-gray-900">
+            Engineering behind the platform
+          </h3>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {/* Team grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {team.map((member) => (
-            <article key={member.role} className="group flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-6 shadow-md transition duration-300 hover:-translate-y-1 hover:border-green-200 hover:shadow-xl">
-              <div className="mb-5 flex items-center gap-4">
-                <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-green-600 text-lg font-bold text-white transition-transform duration-300 group-hover:rotate-3">
+            <article 
+              key={member.name} 
+              className="group flex flex-col rounded-3xl bg-white p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100"
+            >
+              {/* Avatar */}
+              <div className="mb-6 flex items-center gap-4">
+                <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gray-900 text-base font-semibold text-white transition-transform duration-300 group-hover:scale-105">
                   <span aria-hidden="true">{member.initials}</span>
                   <img
                     src={member.image}
@@ -102,19 +137,32 @@ function TeamSection() {
                     onError={(event) => { event.currentTarget.style.display = "none"; }}
                   />
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-gray-900">{member.name}</h4>
-                  <p className="mt-1 text-sm font-semibold text-green-700">{member.role}</p>
+                <div className="min-w-0">
+                  <h4 className="text-base font-semibold text-gray-900 truncate">
+                    {member.name}
+                  </h4>
+                  <p className="text-sm text-gray-500 truncate">
+                    {member.role}
+                  </p>
                 </div>
               </div>
 
-              <p className="flex-1 text-sm leading-7 text-gray-600">{member.biography}</p>
+              {/* Biography */}
+              <p className="flex-1 text-sm leading-relaxed text-gray-600 mb-6">
+                {member.biography}
+              </p>
 
-              <div className="mt-5 border-t border-gray-100 pt-5">
-                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-500">Core expertise</p>
-                <div className="flex flex-wrap gap-2">
+              {/* Skills */}
+              <div className="pt-4 border-t border-gray-100">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-3">
+                  Core expertise
+                </p>
+                <div className="flex flex-wrap gap-1.5">
                   {member.skills.map((skill) => (
-                    <span key={skill} className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-800">
+                    <span 
+                      key={skill} 
+                      className="rounded-full bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 border border-gray-200 group-hover:border-brand/20 group-hover:bg-brand-pale group-hover:text-brand-dark transition-colors"
+                    >
                       {skill}
                     </span>
                   ))}
