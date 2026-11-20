@@ -1,0 +1,6 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com/react@18.3.1/umd/react.production.min.js https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js https://unpkg.com/@babel/standalone@7.26.10/babel.min.js https://cdn.tailwindcss.com/3.4.17; style-src 'self' 'unsafe-inline' https://unpkg.com/lucide-static@0.516.0/font/lucide.css https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css; img-src 'self' data: https://images.unsplash.com; font-src 'self' data: https://unpkg.com https://cdnjs.cloudflare.com; connect-src 'self' https://formspree.io; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://formspree.io; upgrade-insecure-requests

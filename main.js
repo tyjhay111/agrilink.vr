@@ -2,27 +2,29 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navOverlay = document.querySelector(".nav-overlay");
 
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-    navOverlay.classList.toggle("active");
-
-    // Lock body scroll when menu is open
-    document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "auto";
-});
-
-document.querySelectorAll(".nav-link").forEach(n => 
-    n.addEventListener("click", () => {
+if (hamburger && navMenu) {
+    const closeMenu = () => {
         hamburger.classList.remove("active");
+        navMenu.classList.add("hidden");
         navMenu.classList.remove("active");
-        navOverlay.classList.remove("active");
-        document.body.style.overflow = "auto"; // unlock scroll
-    })
-);
+        navOverlay?.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+    };
 
-navOverlay.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-    navOverlay.classList.remove("active");
-    document.body.style.overflow = "auto";
-});
+    hamburger.addEventListener("click", () => {
+        const isOpen = navMenu.classList.contains("hidden") || !navMenu.classList.contains("active");
+        hamburger.classList.toggle("active", isOpen);
+        navMenu.classList.toggle("hidden", !isOpen);
+        navMenu.classList.toggle("active", isOpen);
+        navOverlay?.classList.toggle("active", isOpen);
+        hamburger.setAttribute("aria-expanded", String(isOpen));
+        document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    navOverlay?.addEventListener("click", closeMenu);
+}

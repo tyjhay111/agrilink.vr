@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Impact - AgriLink</title>
     <meta name="description" content="Explore AgriLink's transformative impact on Ghana's agricultural economy and 24-hour economy vision.">
     <meta name="keywords" content="AgriLink impact, Ghana agriculture, 24-hour economy, youth employment">
@@ -11,11 +12,11 @@
     <meta name="twitter:title" content="Impact - AgriLink">
     <meta name="twitter:description" content="Transforming Ghana's agricultural economy">
 
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js" integrity="sha384-BcI7nduYchENm39cFMEVJXHEE7fwHONANyn/pY2YTa+BNtrWF2bKBZeI0wqVithi" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet" integrity="sha384-h3r0OCJencz8nSJECYtQSDqMb7UOGnK9IgguVGYw0Kt8K/aNeUL7Lk+cAflKb1a3" crossorigin="anonymous">
     <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
 
 
@@ -51,6 +52,94 @@
             @apply text-lg text-[var(--text-light)] text-center max-w-3xl mx-auto mb-12;
         }
     }
+
+    .impact-scene-art {
+        min-height: 18rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-color: #f1f7f0;
+    }
+
+    .impact-art {
+        display: block;
+        width: min(100%, 34rem);
+        height: auto;
+        animation: impact-art-arrive 380ms ease-out both;
+    }
+
+    .impact-stage-button {
+        display: grid;
+        width: 100%;
+        min-height: 4.5rem;
+        grid-template-columns: 2.5rem 1fr 1.5rem;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 0.25rem;
+        border-bottom: 1px solid #e5e7eb;
+        color: #374151;
+        text-align: left;
+        transition: color 180ms ease, padding 180ms ease;
+    }
+
+    .impact-stage-button:hover,
+    .impact-stage-button[aria-pressed="true"] {
+        padding-left: 0.75rem;
+        color: #166534;
+    }
+
+    .impact-stage-number {
+        color: #9ca3af;
+        font-size: 0.875rem;
+        font-weight: 700;
+    }
+
+    .impact-stage-button[aria-pressed="true"] .impact-stage-number {
+        color: #d97706;
+    }
+
+    .impact-stage-title {
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    .impact-stage-arrow {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0;
+        transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .impact-stage-button:hover .impact-stage-arrow,
+    .impact-stage-button[aria-pressed="true"] .impact-stage-arrow {
+        opacity: 1;
+        transform: translateX(2px);
+    }
+
+    .impact-target dd {
+        order: -1;
+        margin: 0;
+    }
+
+    @keyframes impact-art-arrive {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .impact-art,
+        .impact-stage-button,
+        .impact-stage-arrow {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
     </style>
 </head>
 <body>
@@ -58,7 +147,6 @@
     <script type="text/babel" src="components/Header.js"></script>
     <script type="text/babel" src="components/Footer.js"></script>
     <script type="text/babel" src="components/ImpactStats.js"></script>
-    <script type="text/babel" src="components/MarketPotential.js"></script>
     <script type="text/babel" src="impact-app.js"></script>
 </body>
 </html>

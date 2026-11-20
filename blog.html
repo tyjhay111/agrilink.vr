@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - AgriLink</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/lucide-static/font/lucide.css" rel="stylesheet"/>
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+        <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet" integrity="sha384-h3r0OCJencz8nSJECYtQSDqMb7UOGnK9IgguVGYw0Kt8K/aNeUL7Lk+cAflKb1a3" crossorigin="anonymous" />
         <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
 
     <style>
@@ -62,11 +63,11 @@
             </ul>
 
             <!-- Hamburger Menu Button -->
-            <div class="md:hidden hamburger cursor-pointer">
+            <button type="button" aria-label="Toggle navigation" aria-expanded="false" class="md:hidden hamburger cursor-pointer p-0 bg-transparent border-0">
                 <span class="bar block w-6 h-0.5 bg-gray-800"></span>
                 <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
                 <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
-            </div>
+            </button>
 
             <!-- Mobile Menu -->
             <ul class="nav-menu md:hidden absolute top-full left-0 bg-white w-full shadow-md flex-col items-center hidden">
@@ -359,29 +360,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    hamburger.classList.toggle('active');
-                    navMenu.classList.toggle('hidden');
-                });
-            }
-            
-            // Close mobile menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.add('hidden');
-                });
-            });
-        });
-    </script>
+    <script src="main.js" defer></script>
 
 </body>
 </html>

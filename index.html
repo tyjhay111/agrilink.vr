@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>AgriLink - Connecting Ghanaian farmers to markets  🇬🇭 </title>
 
     <meta name="description" content="AgriLink revolutionizes agricultural commerce by connecting farmers directly to markets through AI-powered intelligence and accessible technology." />
@@ -14,11 +15,11 @@
     <meta name="twitter:description" content="Revolutionizing agricultural commerce through AI-powered market intelligence" />
     
     <!-- CDN Links -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/lucide-static/font/lucide.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js" integrity="sha384-BcI7nduYchENm39cFMEVJXHEE7fwHONANyn/pY2YTa+BNtrWF2bKBZeI0wqVithi" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet" integrity="sha384-h3r0OCJencz8nSJECYtQSDqMb7UOGnK9IgguVGYw0Kt8K/aNeUL7Lk+cAflKb1a3" crossorigin="anonymous" />
     <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
 
     <!-- Custom Tailwind Config -->
@@ -105,18 +106,5 @@
 
     <!-- App Mount -->
     <script type="text/babel" src="app.js"></script>
-    <head>
-        
-    <!-- Add this to suppress the error temporarily -->
-    <script>
-        // Suppress 404 errors for missing main.js
-        window.addEventListener('error', function(e) {
-            if (e.target.src && e.target.src.includes('main.js')) {
-                e.preventDefault();
-                console.log('main.js not found - this is expected in current setup');
-            }
-        });
-    </script>
-    </head>
 </body>
 </html>

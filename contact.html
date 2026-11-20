@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Contact Us - AgriLink</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
         <link rel="icon" type="image/jpeg" href="images/agrlink.jpg">
 
     <style>
@@ -41,11 +42,11 @@
             </ul>
 
             <!-- Hamburger Menu Button -->
-            <div class="md:hidden hamburger cursor-pointer">
+            <button type="button" aria-label="Toggle navigation" aria-expanded="false" class="md:hidden hamburger cursor-pointer p-0 bg-transparent border-0">
                 <span class="bar block w-6 h-0.5 bg-gray-800"></span>
                 <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
                 <span class="bar block w-6 h-0.5 bg-gray-800 mt-1.5"></span>
-            </div>
+            </button>
 
             <!-- Mobile Menu -->
             <ul class="nav-menu md:hidden absolute top-full left-0 bg-white w-full shadow-md flex-col items-center hidden">
@@ -69,7 +70,7 @@
                 </div>
                 
                 <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                    <form action="#" method="POST">
+                    <form action="https://formspree.io/f/xanrjyjo" method="POST">
                         <div class="space-y-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
@@ -105,7 +106,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="main.js" defer></script>
 
 </body>
 </html>

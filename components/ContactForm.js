@@ -16,100 +16,7 @@ function ContactForm() {
   
   const formspreeEndpoint = "https://formspree.io/f/xanrjyjo";
   
-  // Load libphonenumber-js dynamically
-  const loadPhoneLibrary = async () => {
-    if (window.libphonenumberJs) return window.libphonenumberJs;
-    
-    try {
-      // Dynamic import from CDN
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.20/bundle/libphonenumber-js.min.js';
-      script.async = true;
-      
-      return new Promise((resolve, reject) => {
-        script.onload = () => {
-          window.libphonenumberJs = window.libphonenumber;
-          resolve(window.libphonenumber);
-        };
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
-    } catch (err) {
-      console.error('Failed to load libphonenumber-js:', err);
-      return null;
-    }
-  };
-  
-  // Parse and validate phone number using libphonenumber-js
-  const validateAndFormatPhone = async (phoneNumber, countryCode = 'GH') => {
-    try {
-      const libphonenumber = await loadPhoneLibrary();
-      if (!libphonenumber) {
-        return { isValid: true, formatted: phoneNumber, error: '' }; // Fallback to basic validation
-      }
-      
-      // Remove all non-digit characters except plus sign for parsing
-      const cleanNumber = phoneNumber.replace(/[^\d+]/g, '');
-      
-      // Try to parse the number
-      const phoneUtil = libphonenumber;
-      let parsedNumber;
-      
-      try {
-        // First try with country code
-        parsedNumber = phoneUtil.parsePhoneNumberFromString(cleanNumber, countryCode);
-        
-        // If that fails, try without country code (let library guess)
-        if (!parsedNumber) {
-          parsedNumber = phoneUtil.parsePhoneNumberFromString(cleanNumber);
-        }
-      } catch (parseError) {
-        console.warn('Phone parsing error:', parseError);
-        return { 
-          isValid: false, 
-          formatted: cleanNumber, 
-          error: 'Invalid phone number format' 
-        };
-      }
-      
-      if (!parsedNumber) {
-        return { 
-          isValid: false, 
-          formatted: cleanNumber, 
-          error: 'Invalid phone number format' 
-        };
-      }
-      
-      // Check if the number is valid
-      const isValid = parsedNumber.isValid();
-      
-      if (!isValid) {
-        return { 
-          isValid: false, 
-          formatted: parsedNumber.formatInternational(), 
-          error: 'Phone number appears to be invalid' 
-        };
-      }
-      
-      // Format in E.164 format (international format with +)
-      const formattedE164 = parsedNumber.format('E.164');
-      const formattedInternational = parsedNumber.formatInternational();
-      
-      return {
-        isValid: true,
-        formatted: formattedE164,
-        formattedInternational: formattedInternational,
-        countryCode: parsedNumber.country,
-        country: parsedNumber.countryCallingCode,
-        error: ''
-      };
-      
-    } catch (error) {
-      console.error('Phone validation error:', error);
-      // Fallback to basic validation
-      return fallbackValidation(phoneNumber);
-    }
-  };
+  const validateAndFormatPhone = async (phoneNumber) => fallbackValidation(phoneNumber);
   
   // Fallback validation when library fails
   const fallbackValidation = (phoneNumber) => {
@@ -136,25 +43,6 @@ function ContactForm() {
       formatted: `+${digits}`, 
       error: '' 
     };
-  };
-  
-  // Handle real-time phone number formatting as user types
-  const formatPhoneAsYouType = async (phoneNumber, countryCode = 'GH') => {
-    try {
-      const libphonenumber = await loadPhoneLibrary();
-      if (!libphonenumber) return phoneNumber;
-      
-      const AsYouType = libphonenumber.AsYouType;
-      const asYouType = new AsYouType(countryCode);
-      
-      // Format the number as the user types
-      const formatted = asYouType.input(phoneNumber);
-      return formatted;
-      
-    } catch (error) {
-      console.warn('AsYouType formatting failed:', error);
-      return phoneNumber;
-    }
   };
   
   const handleSubmit = async (e) => {
@@ -232,32 +120,12 @@ function ContactForm() {
   const handleChange = async (e) => {
     const { name, value } = e.target;
     
-    if (name === 'phone') {
-      // Clear any existing phone error
-      if (phoneError) setPhoneError('');
-      
-      // Set the raw value immediately for responsive UI
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-      
-      // Try to format as user types (optional - can be removed if too heavy)
-      if (value.length > 3) {
-        try {
-          const formatted = await formatPhoneAsYouType(value, 'GH');
-          // We don't automatically change the input to keep UX permissive
-          // But we could use this for a preview or suggestion
-        } catch (error) {
-          // Silent fail - formatting is optional
-        }
-      }
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value
-      });
-    }
+    if (name === 'phone' && phoneError) setPhoneError('');
+
+    setFormData({
+      ...formData,
+      [name]: value
+    });
     
     if (error) setError('');
   };

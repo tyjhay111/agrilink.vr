@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Features - AgriLink</title>
     <meta name="description" content="Explore AgriLink's powerful features including AI forecasting, real-time pricing, and multi-language support.">
     <meta name="keywords" content="AgriLink features, AI forecasting, market intelligence, agriculture technology">
@@ -11,11 +12,11 @@
     <meta name="twitter:title" content="Features - AgriLink">
     <meta name="twitter:description" content="Explore AgriLink's powerful features">
 
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.26.10/babel.min.js" integrity="sha384-BcI7nduYchENm39cFMEVJXHEE7fwHONANyn/pY2YTa+BNtrWF2bKBZeI0wqVithi" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet" integrity="sha384-h3r0OCJencz8nSJECYtQSDqMb7UOGnK9IgguVGYw0Kt8K/aNeUL7Lk+cAflKb1a3" crossorigin="anonymous">
 
     <style type="text/tailwindcss">
     @layer theme {
@@ -56,6 +57,137 @@
         
         .section-subtitle {
             @apply text-lg text-[var(--text-light)] text-center max-w-3xl mx-auto mb-12;
+        }
+    }
+
+    .feature-art {
+        width: 2rem;
+        height: 2rem;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        overflow: visible;
+    }
+
+    .feature-icon-frame {
+        transition: background-color 200ms ease, transform 200ms ease;
+    }
+
+    .feature-card:hover .feature-icon-frame {
+        background-color: #dcfce7;
+        transform: translateY(-2px) rotate(-3deg);
+    }
+
+    .feature-market-line {
+        stroke: #059669;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+    }
+
+    .feature-card:hover .feature-market-line {
+        animation: feature-line-draw 550ms ease forwards;
+    }
+
+    .feature-market-dot,
+    .feature-market-spark,
+    .feature-forecast-signal,
+    .feature-message-spark,
+    .feature-payment-check,
+    .feature-language-reply,
+    .feature-logistics-route {
+        stroke: #d97706;
+    }
+
+    .feature-card:hover .feature-market-dot,
+    .feature-card:hover .feature-forecast-signal,
+    .feature-card:hover .feature-message-spark {
+        animation: feature-signal-pulse 700ms ease-in-out infinite alternate;
+    }
+
+    .feature-forecast-sprout {
+        transform-origin: 20px 31px;
+    }
+
+    .feature-card:hover .feature-forecast-sprout {
+        animation: feature-sprout-rise 450ms ease-out;
+    }
+
+    .feature-message-dot--middle {
+        animation-delay: 80ms;
+    }
+
+    .feature-message-dot--last {
+        animation-delay: 160ms;
+    }
+
+    .feature-card:hover .feature-message-dot {
+        animation: feature-message-bounce 450ms ease-in-out;
+    }
+
+    .feature-payment-coin {
+        fill: #fef3c7;
+        transform-origin: 29px 29px;
+    }
+
+    .feature-card:hover .feature-payment-coin {
+        animation: feature-coin-pop 450ms ease-out;
+    }
+
+    .feature-language-label {
+        fill: #059669;
+        stroke: none;
+        font: 700 7px sans-serif;
+    }
+
+    .feature-language-label--local {
+        fill: #d97706;
+        font-size: 5px;
+    }
+
+    .feature-card:hover .feature-language-reply {
+        transform: translateX(1px);
+        transition: transform 200ms ease;
+    }
+
+    .feature-card:hover .feature-logistics-wheel {
+        animation: feature-wheel-turn 600ms ease-in-out;
+        transform-origin: center;
+    }
+
+    .feature-logistics-route {
+        stroke-dasharray: 2 3;
+    }
+
+    @keyframes feature-line-draw {
+        to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes feature-signal-pulse {
+        to { opacity: 0.35; transform: scale(1.18); }
+    }
+
+    @keyframes feature-sprout-rise {
+        50% { transform: scale(1.08); }
+    }
+
+    @keyframes feature-message-bounce {
+        50% { transform: translateY(-2px); }
+    }
+
+    @keyframes feature-coin-pop {
+        50% { transform: scale(1.14); }
+    }
+
+    @keyframes feature-wheel-turn {
+        to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .feature-card:hover .feature-art,
+        .feature-card:hover .feature-art * {
+            animation: none !important;
+            transition: none !important;
         }
     }
     </style>

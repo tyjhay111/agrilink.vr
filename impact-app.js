@@ -41,7 +41,6 @@ function ImpactApp() {
           </div>
         </div>
         <ImpactStats />
-        <MarketPotential />
         <Footer />
       </div>
     );
