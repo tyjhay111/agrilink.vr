@@ -1,8 +1,3 @@
-/**
- * TeamSection Component - Apple-inspired design (fine-tuned)
- * Clean typography, generous whitespace, subtle animations
- */
-
 function TeamSection() {
   const leadership = {
     name: "Mawunyo Abali",
@@ -81,7 +76,7 @@ function TeamSection() {
 
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-brand mb-3 block">
-                Chief Technology Officer  
+                Chief Executive Officer  
               </span>
               <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 mb-2">
                 {leadership.name}
